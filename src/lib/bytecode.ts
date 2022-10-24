@@ -1,6 +1,6 @@
 import { arrayify, hexlify } from '@ethersproject/bytes';
 import bs58 from 'bs58';
-import * as CBOR from 'cbor-x/decode';
+import * as CBOR from 'cbor-x';
 
 type CBOR = {
   bytes: string;

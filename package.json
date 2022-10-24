@@ -1,5 +1,5 @@
 {
-  "name": "bytecode-utils",
+  "name": "@marcocastignoli/bytecode-utils",
   "version": "1.0.1",
   "description": "Decode a contract's bytecode",
   "main": "build/main/index.js",
