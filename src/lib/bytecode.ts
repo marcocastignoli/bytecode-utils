@@ -72,7 +72,7 @@ export const get = async (
 ): Promise<string | undefined> => {
   const bytecode = await provider.request({
     method: 'eth_getCode',
-    params: [address],
+    params: [address, 'latest'],
   });
   return (bytecode as string) || undefined;
 };
