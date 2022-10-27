@@ -78,6 +78,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="globals.html#decode" class="tsd-kind-icon">decode</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#get" class="tsd-kind-icon">get</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,7 +92,7 @@
 					<div class="tsd-signature tsd-kind-icon">CBOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>bytes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/4652c5f/src/lib/bytecode.ts#L5">lib/bytecode.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/31ff280/src/lib/bytecode.ts#L6">lib/bytecode.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -112,7 +113,7 @@
 					<div class="tsd-signature tsd-kind-icon">Decoded<wbr>Object<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cbor<span class="tsd-signature-symbol">: </span><a href="globals.html#cbor" class="tsd-signature-type">CBOR</a><span class="tsd-signature-symbol">; </span>ipfs<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>solcVersion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/4652c5f/src/lib/bytecode.ts#L11">lib/bytecode.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/31ff280/src/lib/bytecode.ts#L12">lib/bytecode.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -146,7 +147,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/4652c5f/src/lib/bytecode.ts#L23">lib/bytecode.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/31ff280/src/lib/bytecode.ts#L24">lib/bytecode.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -170,6 +171,48 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="get" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EthereumProvider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/marcocastignoli/bytecode-utils/blob/31ff280/src/lib/bytecode.ts#L75">lib/bytecode.ts:75</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get contract&#39;s bytecode given an address and an rpc</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>contract&#39;s address</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>provider: <span class="tsd-signature-type">EthereumProvider</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>provider used to get the bytecode</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>bytecode</p>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -190,6 +233,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#decode" class="tsd-kind-icon">decode</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#get" class="tsd-kind-icon">get</a>
 					</li>
 				</ul>
 			</nav>
