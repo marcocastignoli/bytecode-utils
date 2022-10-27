@@ -1,13 +1,25 @@
 import { readFileSync } from 'fs';
 
 import test from 'ava';
+import env from 'dotenv';
+import provider from 'eth-provider';
 
-import { decode } from './bytecode';
+import { decode, get } from './bytecode';
+
+env.config();
 
 const BYTECODES_FOLDER = './src/lib/bytecodes';
 const BYTECODE_IPFS = readFileSync(`${BYTECODES_FOLDER}/ipfs.hex`).toString();
 const BYTECODE_BZZR1 = readFileSync(`${BYTECODES_FOLDER}/bzzr1.hex`).toString();
 const BYTECODE_WRONG = readFileSync(`${BYTECODES_FOLDER}/wrong.hex`).toString();
+
+test("get contract's bytecode by adderss and provider", async (t) => {
+  const ethereumProvider = provider(process.env.RPC_URL);
+  t.is(
+    await get('0x00000000219ab540356cBB839Cbe05303d7705Fa', ethereumProvider),
+    BYTECODE_IPFS
+  );
+});
 
 test('bytecode decode cbor with ipfs property', (t) => {
   t.is(

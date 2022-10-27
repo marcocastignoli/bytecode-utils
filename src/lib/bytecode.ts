@@ -1,6 +1,7 @@
 import { arrayify, hexlify } from '@ethersproject/bytes';
 import bs58 from 'bs58';
 import * as CBOR from 'cbor-x';
+import { EthereumProvider } from 'ethereum-provider';
 
 type CBOR = {
   bytes: string;
@@ -63,4 +64,15 @@ export const decode = (bytecode: string): DecodedObject => {
   });
 
   return result;
+};
+
+export const get = async (
+  address: string,
+  provider: EthereumProvider
+): Promise<string | undefined> => {
+  const bytecode = await provider.request({
+    method: 'eth_getCode',
+    params: [address],
+  });
+  return (bytecode as string) || undefined;
 };
