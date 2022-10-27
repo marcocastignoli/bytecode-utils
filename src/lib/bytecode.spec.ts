@@ -18,6 +18,15 @@ test("get contract's bytecode by adderss and provider", async (t) => {
   );
 });
 
+test("should fail getting contract's bytecode by adderss and provider", async (t) => {
+  const ethereumProvider = provider();
+  try {
+    await get('0x00000000219ab540356cBB839Cbe05303d7705Fa', ethereumProvider);
+  } catch (e: any) {
+    t.is(e.message, 'Not connected');
+  }
+});
+
 test('bytecode decode cbor with ipfs property', (t) => {
   t.is(
     decode(BYTECODE_IPFS).ipfs,

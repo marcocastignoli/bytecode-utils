@@ -66,13 +66,19 @@ export const decode = (bytecode: string): DecodedObject => {
   return result;
 };
 
+/**
+ * Get contract's bytecode given an address and an rpc
+ * @param address - contract's address
+ * @param provider - provider used to get the bytecode
+ * @returns bytecode
+ */
 export const get = async (
   address: string,
   provider: EthereumProvider
-): Promise<string | undefined> => {
+): Promise<string> => {
   const bytecode = await provider.request({
     method: 'eth_getCode',
     params: [address, 'latest'],
   });
-  return (bytecode as string) || undefined;
+  return bytecode as string;
 };
